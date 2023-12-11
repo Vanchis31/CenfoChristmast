@@ -595,6 +595,7 @@ int main() {
         cout << "(2) Productos Administrador" << endl;
         cout << "(3) Categorias Usuario" << endl;
         cout << "(4) Categorias Administrador" << endl;
+        cout << "(5) Usuarios (Admin Only)" << endl;
         cout << "(0) Finalizar" << endl;
         cout << "Opcion seleccionada ->";
         cin >> opc;
@@ -614,6 +615,10 @@ int main() {
         }
         case 4: {
             menuAdminCategorias(listaCategorias);
+            break;
+        }
+        case 5: {
+            menuUsuarios();
             break;
         }
         }
