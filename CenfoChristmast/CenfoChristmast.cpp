@@ -234,6 +234,296 @@ void menuAdminProducto() {
     }
 }
 
+void menuUsuarios() {
+    listaUsuarios* lista = new listaUsuarios();
+    int opc = -1;
+    int dato = 0;
+    string respuesta;
+    usuario user;
+    while (opc != 0) {
+        cout << "----------------------------------" << endl;
+        cout << "              MENU DE USUARIOS" << endl;
+        cout << "----------------------------------" << endl;
+        cout << "(1) Agregar al inicio" << endl;
+        cout << "(2) Agregar al final " << endl;
+        cout << "(3) Agregar antes de...  " << endl;
+        cout << "(4) Agregar despues de...  " << endl;
+        cout << "(5) Modificar un usuario de la lista  " << endl;
+        cout << "(6) Eliminar un usuario de la lista  " << endl;
+        cout << "(7) Consultar un usuario de la lista" << endl;
+        cout << "(8) Desplegar la lista" << endl;
+        cout << "(0) Finalizar" << endl;
+        cout << "Opcion seleccionada ->";
+        cin >> opc;
+        cout << "===================================" << endl;
+
+        switch (opc) {
+        case 1: {
+            cout << "////AL INICIO////";
+            bool perfil = false;
+            int cedula;
+            string nombre;
+            string apellido;
+            string correo;
+            int telefono;
+
+            int choice = -1;
+
+            cout << "Sera un administrador? R/ 1-0" << endl;
+            cin >> choice;
+            switch (choice) {
+            case 1: {
+                perfil = true;
+                break;
+            }
+            case 2: {
+                perfil = false;
+                break;
+            }
+            }
+            cout << "Cual cedula va a tener?" << endl;
+            cin >> cedula;
+            cout << "Cual nombre va a tener?" << endl;
+            cin >> nombre;
+            cout << "Cual apellido va a tener?" << endl;
+            cin >> apellido;
+            cout << "Cual correo va a tener?" << endl;
+            cin >> correo;
+            cout << "Cual sera su numero de telefono?" << endl;
+            cin >> telefono;
+            usuario user = usuario(perfil, cedula, nombre, apellido, correo, telefono);
+            lista->agregarInicio(user);
+            break;
+        }
+        case 2: {
+            cout << "////AL FINAL////";
+            bool perfil = false;
+            int cedula;
+            string nombre;
+            string apellido;
+            string correo;
+            int telefono;
+
+            int choice = -1;
+
+            cout << "Sera un administrador? R/ 1-0" << endl;
+            cin >> choice;
+            switch (choice) {
+            case 1: {
+                perfil = true;
+                break;
+            }
+            case 2: {
+                perfil = false;
+                break;
+            }
+            }
+            cout << "Cual cedula va a tener?" << endl;
+            cin >> cedula;
+            cout << "Cual nombre va a tener?" << endl;
+            cin >> nombre;
+            cout << "Cual apellido va a tener?" << endl;
+            cin >> apellido;
+            cout << "Cual correo va a tener?" << endl;
+            cin >> correo;
+            cout << "Cual sera su numero de telefono?" << endl;
+            cin >> telefono;
+            usuario user = usuario(perfil, cedula, nombre, apellido, correo, telefono);
+            lista->agregarFinal(user);
+            break;
+        }
+        case 3: {
+            int ref = 0;
+            cout << "Usuario de referencia en la lista?->";
+            cin >> ref;
+            cout << "Usuario que desea agregar antes de " << ref << " ->";
+            bool perfil = false;
+            int cedula;
+            string nombre;
+            string apellido;
+            string correo;
+            int telefono;
+
+            int choice = -1;
+
+            cout << "Sera un administrador? R/ 1-0" << endl;
+            cin >> choice;
+            switch (choice) {
+            case 1: {
+                perfil = true;
+                break;
+            }
+            case 2: {
+                perfil = false;
+                break;
+            }
+            }
+            cout << "Cual cedula va a tener?" << endl;
+            cin >> cedula;
+            cout << "Cual nombre va a tener?" << endl;
+            cin >> nombre;
+            cout << "Cual apellido va a tener?" << endl;
+            cin >> apellido;
+            cout << "Cual correo va a tener?" << endl;
+            cin >> correo;
+            cout << "Cual sera su numero de telefono?" << endl;
+            cin >> telefono;
+            usuario user = usuario(perfil, cedula, nombre, apellido, correo, telefono);
+            if (lista->agregarAntesDe(user, ref))
+                cout << "Agregado correctamente" << endl;
+            else
+                cout << "No se pudo agregar" << endl;
+            break;
+        }
+        case 4: {
+            int ref = 0;
+            cout << "Usuario de referencia en la lista?->";
+            cin >> ref;
+            cout << "Usuario que desea agregar despues de " << ref << " ->";
+            bool perfil = false;
+            int cedula;
+            string nombre;
+            string apellido;
+            string correo;
+            int telefono;
+
+            int choice = -1;
+
+            cout << "Sera un administrador? R/ 1-0" << endl;
+            cin >> choice;
+            switch (choice) {
+            case 1: {
+                perfil = true;
+                break;
+            }
+            case 2: {
+                perfil = false;
+                break;
+            }
+            }
+            cout << "Cual cedula va a tener?" << endl;
+            cin >> cedula;
+            cout << "Cual nombre va a tener?" << endl;
+            cin >> nombre;
+            cout << "Cual apellido va a tener?" << endl;
+            cin >> apellido;
+            cout << "Cual correo va a tener?" << endl;
+            cin >> correo;
+            cout << "Cual sera su numero de telefono?" << endl;
+            cin >> telefono;
+            usuario user = usuario(perfil, cedula, nombre, apellido, correo, telefono);
+            if (lista->agregarDespuesDe(user, ref))
+                cout << "Agregado correctamente" << endl;
+            else
+                cout << "No se pudo agregar" << endl;
+            break;
+        }
+        case 5: {
+            cout << "Cedula del usuario que desea modificar de la lista: ";
+            cin >> dato;
+            bool perfil = false;
+            int cedula;
+            string nombre;
+            string apellido;
+            string correo;
+            int telefono;
+
+            int choice = -1;
+
+            cout << "Sera un administrador? R/ 1-0" << endl;
+            cin >> choice;
+            switch (choice) {
+            case 1: {
+                perfil = true;
+                break;
+            }
+            case 2: {
+                perfil = false;
+                break;
+            }
+            }
+            cout << "Cual cedula va a tener?" << endl;
+            cin >> cedula;
+            cout << "Cual nombre va a tener?" << endl;
+            cin >> nombre;
+            cout << "Cual apellido va a tener?" << endl;
+            cin >> apellido;
+            cout << "Cual correo va a tener?" << endl;
+            cin >> correo;
+            cout << "Cual sera su numero de telefono?" << endl;
+            cin >> telefono;
+            usuario user = usuario(perfil, cedula, nombre, apellido, correo, telefono);
+            if (lista->modificar(dato, user))
+                cout << "El numero " << dato << " ha sido modificado exitosamente" << endl;
+            else
+                cout << "El numero " << dato << " no está en la lista" << endl;
+
+            break;
+        }
+        case 6: {
+            cout << "Cedula del usuario que desea eliminar de la lista: ";
+            cin >> dato;
+            if (lista->eliminar(dato))
+                cout << "El numero " << dato << " ha sido eliminado exitosamente" << endl;
+            else
+                cout << "El numero " << dato << " no está en la lista" << endl;
+
+            break;
+        }
+        case 7: {
+            int choice = -1;
+
+            cout << "1 - Busqueda por cedula" << endl;
+            cout << "2 - Busqueda por nombre" << endl;
+            cout << "-----------------------" << endl;
+
+            cin >> choice;
+            switch (choice) {
+            case 1:
+                cout << "Cedula del usuario que desea encontrar ";
+                cin >> dato;
+                lista->consultarCedula(dato);
+                break;
+
+            case 2:
+                cout << "Nombre del usuario que desea encontrar ";
+                cin >> dato;
+                lista->consultarNombre(respuesta);
+                break;
+            }
+            break;
+        }
+        case 8: {
+            int choice = -1;
+
+            cout << "1 - Desplegar filtrado" << endl;
+            cout << "2 - Desplegar informacion total" << endl;
+            cout << "-----------------------" << endl;
+
+            cin >> choice;
+            switch (choice) {
+            case 1:
+                lista->desplegar();
+                break;
+
+            case 2:
+                lista->desplegarTodo();
+                break;
+            }
+            break;
+        }
+        case 0:
+            cout << "Finalizando el programa... ";
+            break;
+        default:
+            cout << "Opcion no válida..." << endl;
+        }
+        cout << "\n\n";
+        system("pause");
+        system("cls");
+    }
+}
+
 int main() {
     int opc = -1;
     while (opc != 0) {
