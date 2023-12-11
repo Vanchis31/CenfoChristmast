@@ -19,4 +19,3 @@ public:
 	usuario getUsuario();
 	usuarioNodo* getSgte();
 };
-

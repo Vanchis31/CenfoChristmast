@@ -132,16 +132,22 @@
     <ClCompile Include="CenfoChristmast.cpp" />
     <ClCompile Include="ListaCategoria.cpp" />
     <ClCompile Include="listaProducto.cpp" />
+    <ClCompile Include="listaUsuarios.cpp" />
     <ClCompile Include="producto.cpp" />
     <ClCompile Include="productoNodo.cpp" />
+    <ClCompile Include="usuario.cpp" />
+    <ClCompile Include="usuarioNodo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Categoria.h" />
     <ClInclude Include="categoriaNodo.h" />
     <ClInclude Include="ListaCategoria.h" />
     <ClInclude Include="listaProducto.h" />
+    <ClInclude Include="listaUsuarios.h" />
     <ClInclude Include="producto.h" />
     <ClInclude Include="productoNodo.h" />
+    <ClInclude Include="usuario.h" />
+    <ClInclude Include="usuarioNodo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

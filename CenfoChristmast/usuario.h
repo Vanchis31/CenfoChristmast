@@ -29,4 +29,3 @@ public:
 	string getCorreo();
 	int getTelefono();
 };
-

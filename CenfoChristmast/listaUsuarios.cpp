@@ -1,6 +1,7 @@
+#include "listaUsuarios.h"
 #include <stdlib.h>
 #include <iostream>
-
+#include "usuarioNodo.h"
 #include "listaUsuarios.h"
 using namespace std;
 

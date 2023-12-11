@@ -6,7 +6,9 @@
 #include <iostream>
 #include <stdlib.h>
 #include "producto.h"
+#include "usuario.h"
 #include "listaProducto.h"
+#include "listaUsuarios.h"
 using namespace std;
 listaProducto* listaProd = new listaProducto();
 void agregarProductos() {
