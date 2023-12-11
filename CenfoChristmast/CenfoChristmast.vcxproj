@@ -127,12 +127,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Categoria.cpp" />
+    <ClCompile Include="categoriaNodo.cpp" />
     <ClCompile Include="CenfoChristmast.cpp" />
+    <ClCompile Include="ListaCategoria.cpp" />
     <ClCompile Include="listaProducto.cpp" />
     <ClCompile Include="producto.cpp" />
     <ClCompile Include="productoNodo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Categoria.h" />
+    <ClInclude Include="categoriaNodo.h" />
+    <ClInclude Include="ListaCategoria.h" />
     <ClInclude Include="listaProducto.h" />
     <ClInclude Include="producto.h" />
     <ClInclude Include="productoNodo.h" />

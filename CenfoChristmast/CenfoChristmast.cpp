@@ -1,6 +1,8 @@
 // CenfoChristmast.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
 //
-
+#include "ListaCategoria.h"
+#include "Categoria.h"
+#include "CategoriaNodo.h"
 #include <iostream>
 #include <stdlib.h>
 #include "producto.h"
@@ -524,14 +526,73 @@ void menuUsuarios() {
     }
 }
 
+void menuAdminCategorias(ListaCategoria* listaCategorias) {
+    int opc = -1;
+    while (opc != 0) {
+        cout << "----------------------------------" << endl;
+        cout << "         MENU DE CATEGORIAS" << endl;
+        cout << "----------------------------------" << endl;
+        cout << "(1) Crear Categoría" << endl;
+        cout << "(2) Agregar Categoría" << endl;
+        cout << "(3) Obtener Categoría" << endl;
+        cout << "(4) Eliminar Categoría" << endl;
+        cout << "(0) Regresar" << endl;
+        cout << "Opcion seleccionada ->";
+        cin >> opc;
+        cout << "===================================" << endl;
+        switch (opc) {
+        case 1: {
+            listaCategorias->CrearListaCategoria();
+            break;
+        }
+        case 2: {
+            listaCategorias->AgregarCategoria();
+            break;
+        }
+        case 3: {
+            listaCategorias->ObtenerCategoria();
+            break;
+        }
+        case 4: {
+            listaCategorias->EliminarCategoria();
+            break;
+        }
+        }
+    }
+}
+
+void menuClienteCategorias(ListaCategoria* listaCategorias) {
+    int opc = -1;
+    while (opc != 0) {
+        cout << "----------------------------------" << endl;
+        cout << "         MENU DE CATEGORIAS" << endl;
+        cout << "----------------------------------" << endl;
+        cout << "(1) Obtener Categoría" << endl;
+        cout << "(0) Regresar" << endl;
+        cout << "Opcion seleccionada ->";
+        cin >> opc;
+        cout << "===================================" << endl;
+        switch (opc) {
+        case 1: {
+            listaCategorias->ObtenerCategoria();
+            break;
+        }
+        }
+    }
+}
+
 int main() {
+    ListaCategoria* listaCategorias = new ListaCategoria();
+
     int opc = -1;
     while (opc != 0) {
         cout << "----------------------------------" << endl;
         cout << "              MENU" << endl;
         cout << "----------------------------------" << endl;
-        cout << "(1) Usuario" << endl;
-        cout << "(2) Administrador" << endl;
+        cout << "(1) Productos Usuario" << endl;
+        cout << "(2) Productos Administrador" << endl;
+        cout << "(3) Categorias Usuario" << endl;
+        cout << "(4) Categorias Administrador" << endl;
         cout << "(0) Finalizar" << endl;
         cout << "Opcion seleccionada ->";
         cin >> opc;
@@ -545,8 +606,21 @@ int main() {
             menuAdminProducto();
             break;
         }
+        case 3: {
+            menuClienteCategorias(listaCategorias);
+            break;
+        }
+        case 4: {
+            menuAdminCategorias(listaCategorias);
+            break;
+        }
         }
     }
+
+    // Liberar memoria al finalizar el programa
+    delete listaCategorias;
+
+    return 0;
 }
 
 
